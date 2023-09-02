@@ -19,7 +19,6 @@ namespace WebApplication1.Services
             try
             {
                 var allemployess = _context.Employees.ToListAsync();
-                return await allemployess;
             }
             catch (Exception exp)
             {
