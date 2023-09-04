@@ -14,7 +14,7 @@ namespace WebApplication1.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<Employee>> SelectAllEmployees()
+        public async Task<List<Employee>> SelectAllEmployees()
         {
             try
             {

@@ -16,7 +16,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet("[action]")]
-        public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
+        public async Task<ActionResult<List<Employee>>> GetEmployees()
         {
             try
             {
