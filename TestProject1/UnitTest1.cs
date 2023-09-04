@@ -47,7 +47,7 @@ namespace TestProject1
 
             //assert
             Assert.NotNull(employeeResult);
-            Assert.False(employeeList.Equals(actualtResult));
+            Assert.True(employeeList.Equals(actualtResult));
         }
     }
 }
