@@ -20,7 +20,7 @@ namespace WebApplication1.Controllers
         {
             try
             {
-                var allemployess = await _employeeService.SelectAllEmployees();
+                var allemployess = await _employeeService.SelectAllEmployees(); 
                 return Ok(allemployess);
             }
             catch (Exception exp)
