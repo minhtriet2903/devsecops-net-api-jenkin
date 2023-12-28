@@ -29,11 +29,5 @@ namespace WebApplication1.Controllers
             })
             .ToArray();
         }
-
-        [HttpGet(Name = "GetBadWeather")]
-        public String GetBadWeather()
-        {
-            return "Success query bad weather";
-        }
     }
 }
