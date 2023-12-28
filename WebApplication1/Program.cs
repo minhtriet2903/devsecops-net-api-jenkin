@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Prometheus;
 using WebApplication1.Db;
 using WebApplication1.Interfaces;
 using WebApplication1.Services;
@@ -31,14 +32,22 @@ using (var scope = app.Services.CreateScope())
     SeedDataGenerator.Initialize(services);
 }
 
+app.UseMetricServer();
+
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
+//if (app.Environment.IsDevelopment())
+//{
+app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
 
 app.UseHttpsRedirection();
+
+//adding metrics related to HTTP
+app.UseHttpMetrics(options =>
+{
+    options.AddCustomLabel("host", context => context.Request.Host.Host);
+});
 
 app.UseAuthorization();
 
