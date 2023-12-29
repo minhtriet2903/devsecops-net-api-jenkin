@@ -29,5 +29,11 @@ namespace WebApplication1.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet(Name = "TestCommit")]
+        public String TestCommit()
+        {
+            return "TestCommit";
+        }
     }
 }
